@@ -3,7 +3,7 @@ from EmployeeApp import views
 
 from django.conf import settings
 
-from django.views.static import serve
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -15,4 +15,4 @@ urlpatterns = [
  re_path(r'^employee/([0-9]+)$',views.employeeApi),
  
  re_path(r'^employee/savefile',views.SaveFile)
-]+serve(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT,path=settings.BASE_DIR)
+]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
